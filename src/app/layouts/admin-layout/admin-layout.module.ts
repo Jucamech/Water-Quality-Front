@@ -1,3 +1,6 @@
+import { LineChartWithNumbersAndGridComponent } from './../../components/charts/line-chart-with-numbers-and-grid/line-chart-with-numbers-and-grid.component';
+import { LineChartComponent } from './../../components/charts/line-chart/line-chart.component';
+import { BarChartSimpleGradientsNumbersComponent } from './../../components/charts/bar-chart-simple-gradients-numbers/bar-chart-simple-gradients-numbers.component';
 import { BigDashboardChartComponent } from './../../components/charts/big-dashboard-chart/big-dashboard-chart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -34,7 +37,10 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    BigDashboardChartComponent
+    BigDashboardChartComponent,
+    BarChartSimpleGradientsNumbersComponent,
+    LineChartComponent,
+    LineChartWithNumbersAndGridComponent
   ]
 })
 
