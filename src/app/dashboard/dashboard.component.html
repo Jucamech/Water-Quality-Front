@@ -1,13 +1,4 @@
-<div class="panel-header panel-header-lg">
-    <canvas baseChart id="bigDashboardChart"
-                [datasets]="lineBigDashboardChartData"
-                [labels]="lineBigDashboardChartLabels"
-                 [colors]="lineBigDashboardChartColors"
-                [options]="lineBigDashboardChartOptions"
-                [chartType]="lineBigDashboardChartType"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)"></canvas>
-</div>
+<app-big-dashboard-chart dataLabel="Test"></app-big-dashboard-chart>
 
 <div class="main-content">
   <div class="row">

@@ -1,3 +1,4 @@
+import { BigDashboardChartComponent } from './../../components/charts/big-dashboard-chart/big-dashboard-chart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -33,6 +34,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
+    BigDashboardChartComponent
   ]
 })
 
