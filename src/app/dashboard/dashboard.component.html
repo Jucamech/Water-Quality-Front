@@ -3,28 +3,46 @@
 <div class="main-content">
   <div class="row">
     <div class="col-lg-4">
-      <app-card-chart title="Hoy" subtitle="Temperatura" chartType="lineChart"></app-card-chart>
+      <app-card-chart
+        [title]="electricalConductivityMeasurement"
+        [subtitle]="electricalConductivityName"
+        [chartType]="electricalConductivityChartType"></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="Temperatura" chartType="lineChartNumbersGrid"></app-card-chart>
+      <app-card-chart
+        [title]="pHMeasurement"
+        [subtitle]="pHName"
+        [chartType]="pHChartType"></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="pH" chartType="lineChartNumbersGrid"></app-card-chart>
+      <app-card-chart
+        [title]="dissolvedOxigenMeasurement"
+        [subtitle]="dissolvedOxigenName"
+        [chartType]="dissolvedOxigenChartType"></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="Electroconductividad" chartType="lineChartNumbersGrid"></app-card-chart>
+      <app-card-chart
+        title="Milivoltios"
+        subtitle="Potencial de Oxido Reducción"
+        chartType="lineChartNumbersGrid"></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="Total de solidos disueltos" chartType="lineChartNumbersGrid"></app-card-chart>
+      <app-card-chart
+        title="Partes por millón (ppm)"
+        subtitle="Total de solidos disueltos"
+        chartType="lineChartNumbersGrid"></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="Temperatura" chartType="lineChartNumbersGrid"></app-card-chart>
+      <app-card-chart
+        title="NTU"
+        subtitle="Turbidez"
+        chartType="lineChartNumbersGrid"></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="Temperatura" chartType="lineChartNumbersGrid"></app-card-chart>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <app-card-chart title="Hoy" subtitle="Temperatura" chartType="barChart"></app-card-chart>
+      <app-card-chart
+        [title]="temperatureMeasurement"
+        [subtitle]="temperatureName"
+        [chartType]="temperatureChartType"></app-card-chart>
     </div>
   </div>
   <div class="row">

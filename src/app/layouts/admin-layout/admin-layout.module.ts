@@ -1,3 +1,4 @@
+import { TableResponsiveComponent } from './../../components/charts/table-responsive/table-responsive.component';
 import { CardChartComponent } from './../../components/charts/card-chart/card-chart.component';
 import { LineChartWithNumbersAndGridComponent } from './../../components/charts/line-chart-with-numbers-and-grid/line-chart-with-numbers-and-grid.component';
 import { LineChartComponent } from './../../components/charts/line-chart/line-chart.component';
@@ -42,7 +43,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     BarChartSimpleGradientsNumbersComponent,
     LineChartComponent,
     LineChartWithNumbersAndGridComponent,
-    CardChartComponent
+    CardChartComponent,
+    TableResponsiveComponent
   ]
 })
 
