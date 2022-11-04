@@ -1,3 +1,4 @@
+import { CardChartComponent } from './../../components/charts/card-chart/card-chart.component';
 import { LineChartWithNumbersAndGridComponent } from './../../components/charts/line-chart-with-numbers-and-grid/line-chart-with-numbers-and-grid.component';
 import { LineChartComponent } from './../../components/charts/line-chart/line-chart.component';
 import { BarChartSimpleGradientsNumbersComponent } from './../../components/charts/bar-chart-simple-gradients-numbers/bar-chart-simple-gradients-numbers.component';
@@ -40,7 +41,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     BigDashboardChartComponent,
     BarChartSimpleGradientsNumbersComponent,
     LineChartComponent,
-    LineChartWithNumbersAndGridComponent
+    LineChartWithNumbersAndGridComponent,
+    CardChartComponent
   ]
 })
 

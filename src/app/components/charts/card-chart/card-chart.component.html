@@ -1,0 +1,26 @@
+<div class="card card-chart">
+  <div class="card-header">
+    <h5 class="card-category">{{title}}</h5>
+    <h4 class="card-title">{{subtitle}}</h4>
+    <div ngbDropdown>
+      <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+        <i class="now-ui-icons loader_gear"></i>
+      </button>
+      <div ngbDropdownMenu class="dropdown-menu-right">
+        <a class="dropdown-item text-info" href="#">Ver en tabla</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item text-danger" href="#">Remove Data</a>
+        <input type="date" class="dropdown-item form-control">
+      </div>
+    </div>
+  </div>
+    <app-line-chart *ngIf="chartType == 'lineChart'"></app-line-chart>
+    <app-line-chart-with-numbers-and-grid *ngIf="chartType == 'lineChartNumbersGrid'"></app-line-chart-with-numbers-and-grid>
+    <app-bar-chart-simple-gradients-numbers *ngIf="chartType == 'barChart'"></app-bar-chart-simple-gradients-numbers>
+  <div class="card-footer">
+    <div class="stats">
+      <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+    </div>
+  </div>
+</div>
