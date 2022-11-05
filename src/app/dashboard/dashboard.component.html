@@ -1,4 +1,54 @@
-<app-big-dashboard-chart dataLabel="Test"></app-big-dashboard-chart>
+<!-- <app-big-dashboard-chart dataLabel="Test"></app-big-dashboard-chart> -->
+<div class="card card-chart">
+  <div class="card-header">
+    <div class="col-lg-12 col-md-12">
+      <h4 class="card-title text-primary">{{ filterTitle }}</h4>
+    </div>
+  </div>
+  <div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <label class="text-primary">{{ filterBy }}</label>
+          <select
+            name="filterType"
+            id="filterType"
+            class="form-control text-primary"
+            [(ngModel)]="filterTypeSelected"
+          >
+            <option [value]="item" *ngFor="let item of filterTypes">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+        <div class="col-lg-4 col-md-4" *ngIf="filterTypeSelected == 'Fecha'">
+          <label class="text-primary">{{ startDateFilterName }}</label>
+          <input type="date" class="form-control text-primary" />
+        </div>
+        <div class="col-lg-4 col-md-4" *ngIf="filterTypeSelected == 'Fecha'">
+          <label class="text-primary">{{ endDateFilterName }}</label>
+          <input type="date" class="form-control text-primary" />
+        </div>
+        <div class="col-lg-4 col-md-4" *ngIf="filterTypeSelected == 'Hora'">
+          <label class="text-primary">{{ startTimeFilterName }}</label>
+          <input type="time" class="form-control text-primary" />
+        </div>
+        <div class="col-lg-4 col-md-4" *ngIf="filterTypeSelected == 'Hora'">
+          <label class="text-primary">{{ endTimeFilterName }}</label>
+          <input type="time" class="form-control text-primary" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2">
+          <button class="form-control btn btn-primary">Filtrar</button>
+        </div>
+        <div class="col-lg-2 col-md-2">
+          <button class="form-control btn btn-primary">Limpiar filtros</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="main-content">
   <div class="row">
@@ -6,53 +56,60 @@
       <app-card-chart
         [title]="electricalConductivityMeasurement"
         [subtitle]="electricalConductivityName"
-        [chartType]="electricalConductivityChartType"></app-card-chart>
+        [chartType]="electricalConductivityChartType"
+      ></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
       <app-card-chart
         [title]="pHMeasurement"
         [subtitle]="pHName"
-        [chartType]="pHChartType"></app-card-chart>
+        [chartType]="pHChartType"
+      ></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
       <app-card-chart
         [title]="dissolvedOxigenMeasurement"
         [subtitle]="dissolvedOxigenName"
-        [chartType]="dissolvedOxigenChartType"></app-card-chart>
+        [chartType]="dissolvedOxigenChartType"
+      ></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
       <app-card-chart
         title="Milivoltios"
         subtitle="Potencial de Oxido Reducción"
-        chartType="lineChartNumbersGrid"></app-card-chart>
+        chartType="lineChartNumbersGrid"
+      ></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
       <app-card-chart
         title="Partes por millón (ppm)"
         subtitle="Total de solidos disueltos"
-        chartType="lineChartNumbersGrid"></app-card-chart>
+        chartType="lineChartNumbersGrid"
+      ></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
       <app-card-chart
         title="NTU"
         subtitle="Turbidez"
-        chartType="lineChartNumbersGrid"></app-card-chart>
+        chartType="lineChartNumbersGrid"
+      ></app-card-chart>
     </div>
     <div class="col-lg-4 col-md-6">
       <app-card-chart
         [title]="temperatureMeasurement"
         [subtitle]="temperatureName"
-        [chartType]="temperatureChartType"></app-card-chart>
+        [chartType]="temperatureChartType"
+      ></app-card-chart>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <div class="card  card-tasks">
-        <div class="card-header ">
+      <div class="card card-tasks">
+        <div class="card-header">
           <h5 class="card-category">Backend development</h5>
           <h4 class="card-title">Tasks</h4>
         </div>
-        <div class="card-body ">
+        <div class="card-body">
           <div class="table-full-width table-responsive">
             <table class="table">
               <tbody>
@@ -60,17 +117,36 @@
                   <td>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" checked>
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
                         <span class="form-check-sign"></span>
                       </label>
                     </div>
                   </td>
-                  <td class="text-left">Sign contract for "What are conference organizers afraid of?"</td>
+                  <td class="text-left">
+                    Sign contract for "What are conference organizers afraid
+                    of?"
+                  </td>
                   <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title=""
+                      class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
+                      data-original-title="Edit Task"
+                    >
                       <i class="now-ui-icons ui-2_settings-90"></i>
                     </button>
-                    <button type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title=""
+                      class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
+                      data-original-title="Remove"
+                    >
                       <i class="now-ui-icons ui-1_simple-remove"></i>
                     </button>
                   </td>
@@ -79,17 +155,32 @@
                   <td>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox">
+                        <input class="form-check-input" type="checkbox" />
                         <span class="form-check-sign"></span>
                       </label>
                     </div>
                   </td>
-                  <td class="text-left">Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                  <td class="text-left">
+                    Lines From Great Russian Literature? Or E-mails From My
+                    Boss?
+                  </td>
                   <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title=""
+                      class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
+                      data-original-title="Edit Task"
+                    >
                       <i class="now-ui-icons ui-2_settings-90"></i>
                     </button>
-                    <button type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title=""
+                      class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
+                      data-original-title="Remove"
+                    >
                       <i class="now-ui-icons ui-1_simple-remove"></i>
                     </button>
                   </td>
@@ -98,18 +189,36 @@
                   <td>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" checked>
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
                         <span class="form-check-sign"></span>
                       </label>
                     </div>
                   </td>
-                  <td class="text-left">Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                  <td class="text-left">
+                    Flooded: One year later, assessing what was lost and what
+                    was found when a ravaging rain swept through metro Detroit
                   </td>
                   <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title=""
+                      class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
+                      data-original-title="Edit Task"
+                    >
                       <i class="now-ui-icons ui-2_settings-90"></i>
                     </button>
-                    <button type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title=""
+                      class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
+                      data-original-title="Remove"
+                    >
                       <i class="now-ui-icons ui-1_simple-remove"></i>
                     </button>
                   </td>
@@ -118,10 +227,11 @@
             </table>
           </div>
         </div>
-        <div class="card-footer ">
-          <hr>
+        <div class="card-footer">
+          <hr />
           <div class="stats">
-            <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+            <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes
+            ago
           </div>
         </div>
       </div>
@@ -130,95 +240,47 @@
       <div class="card">
         <div class="card-header">
           <h5 class="card-category">All Persons List</h5>
-          <h4 class="card-title"> Employees Stats</h4>
+          <h4 class="card-title">Employees Stats</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
-                <th>
-                  Name
-                </th>
-                <th>
-                  Country
-                </th>
-                <th>
-                  City
-                </th>
-                <th class="text-right">
-                  Salary
-                </th>
+              <thead class="text-primary">
+                <th>Name</th>
+                <th>Country</th>
+                <th>City</th>
+                <th class="text-right">Salary</th>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    Dakota Rice
-                  </td>
-                  <td>
-                    Niger
-                  </td>
-                  <td>
-                    Oud-Turnhout
-                  </td>
-                  <td class="text-right">
-                    $36,738
-                  </td>
+                  <td>Dakota Rice</td>
+                  <td>Niger</td>
+                  <td>Oud-Turnhout</td>
+                  <td class="text-right">$36,738</td>
                 </tr>
                 <tr>
-                  <td>
-                    Minerva Hooper
-                  </td>
-                  <td>
-                    Curaçao
-                  </td>
-                  <td>
-                    Sinaai-Waas
-                  </td>
-                  <td class="text-right">
-                    $23,789
-                  </td>
+                  <td>Minerva Hooper</td>
+                  <td>Curaçao</td>
+                  <td>Sinaai-Waas</td>
+                  <td class="text-right">$23,789</td>
                 </tr>
                 <tr>
-                  <td>
-                    Sage Rodriguez
-                  </td>
-                  <td>
-                    Netherlands
-                  </td>
-                  <td>
-                    Baileux
-                  </td>
-                  <td class="text-right">
-                    $56,142
-                  </td>
+                  <td>Sage Rodriguez</td>
+                  <td>Netherlands</td>
+                  <td>Baileux</td>
+                  <td class="text-right">$56,142</td>
                 </tr>
                 <tr>
-                  <td>
-                    Doris Greene
-                  </td>
-                  <td>
-                    Malawi
-                  </td>
-                  <td>
-                    Feldkirchen in Kärnten
-                  </td>
-                  <td class="text-right">
-                    $63,542
-                  </td>
+                  <td>Doris Greene</td>
+                  <td>Malawi</td>
+                  <td>Feldkirchen in Kärnten</td>
+                  <td class="text-right">$63,542</td>
                 </tr>
                 <tr>
-                  <td>
-                    Mason Porter
-                  </td>
-                  <td>
-                    Chile
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-right">
-                    $78,615
-                  </td>
+                  <td>Mason Porter</td>
+                  <td>Chile</td>
+                  <td>Gloucester</td>
+                  <td class="text-right">$78,615</td>
                 </tr>
               </tbody>
             </table>

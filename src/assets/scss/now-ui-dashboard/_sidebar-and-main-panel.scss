@@ -117,8 +117,9 @@
             &.active-pro > a{
               background-color: $white-color;
               box-shadow: $box-shadow;
+              color: $primary-color;
               i{
-                color: $danger-color;
+                color: $primary-color;
               }
             }
             :hover &.active-pro > a,

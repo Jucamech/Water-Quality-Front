@@ -7,6 +7,15 @@ import * as Chartist from 'chartist';
   styleUrls: ["./dashboard.component.css"],
 })
 export class DashboardComponent implements OnInit {
+  //Filter
+  public filterTitle = "FILTROS";
+  public filterBy = "Filtrar por:"
+  public filterTypes = ['Fecha', 'Hora'];
+  public filterTypeSelected;
+  public startDateFilterName = 'Fecha de inicio:';
+  public endDateFilterName = 'Fecha fin:';
+  public startTimeFilterName = 'Hora de inicio:';
+  public endTimeFilterName = 'Hora fin:';
   //Electrical Conductivity
   public electricalConductivityName = "Conductividad Eléctrica";
   public electricalConductivityMeasurement = "S/CM";
@@ -32,5 +41,9 @@ export class DashboardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!this.filterTypeSelected) {
+      this.filterTypeSelected = 'Fecha';
+    }
+  }
 }
